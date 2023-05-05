@@ -4,7 +4,7 @@
 import 'package:cupidsoracle/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:cupidsoracle/components/navbar.dart';
-import 'package:cupidsoracle/data/accounts.dart';
+import 'package:cupidsoracle/data/user.dart';
 
 // import 'package:firebase_database/firebase_database.dart';
 
