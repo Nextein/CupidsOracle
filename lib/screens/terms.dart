@@ -12,8 +12,23 @@ class TermsScreen extends StatelessWidget {
           Container(
             decoration: backgroundGradient,
           ),
-          Container(
-            decoration: cardBackground,
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 35,
+              vertical: 35,
+            ),
+            child: Container(
+              decoration: cardBackground,
+              child: ListView(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Placeholder(),
+                  ),
+                  Placeholder(),
+                ],
+              ),
+            ),
           ),
         ],
       ),

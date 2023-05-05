@@ -37,3 +37,5 @@ const navbarBackground = BoxDecoration(
   color: color1,
   borderRadius: BorderRadius.all(Radius.circular(10)),
 );
+
+const double navbarHeight = 52;

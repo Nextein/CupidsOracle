@@ -14,36 +14,28 @@ class _AffinityScreenState extends State<AffinityScreen> {
   Widget build(BuildContext context) {
     // var size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          // Backgound
-          Container(
-            decoration: backgroundGradient,
-          ),
-          // Navbar
-          const Navbar(),
-          // Foreground
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(35, 25, 25, 52 + 10),
-              child: ListView(
-                children: const <Widget>[
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  AffinityProfile(),
-                  SeeMoreButton(),
-                ],
-              ),
+    return Stack(
+      children: <Widget>[
+        // Foreground
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(25, 25, 25, navbarHeight + 10),
+            child: ListView(
+              children: const <Widget>[
+                AffinityProfile(),
+                AffinityProfile(),
+                AffinityProfile(),
+                AffinityProfile(),
+                AffinityProfile(),
+                AffinityProfile(),
+                AffinityProfile(),
+                AffinityProfile(),
+                SeeMoreButton(),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

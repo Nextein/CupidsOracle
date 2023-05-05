@@ -106,3 +106,26 @@ class _PlayScreenState extends State<PlayScreen> {
     );
   }
 }
+
+class PlayMenu extends StatelessWidget {
+  const PlayMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        // Foreground
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(25, 25, 25, navbarHeight + 10),
+            child: ListView(
+              children: [
+                Placeholder(),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

@@ -3,6 +3,8 @@
 // import 'package:cupidsoracle/theme.dart';
 import 'package:cupidsoracle/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:cupidsoracle/components/navbar.dart';
+import 'package:cupidsoracle/data/accounts.dart';
 
 // import 'package:firebase_database/firebase_database.dart';
 
@@ -22,32 +24,67 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          // Background
-          Container(
-            decoration: backgroundGradient,
+    return Stack(
+      children: <Widget>[
+        // Background
+        Container(
+          decoration: backgroundGradient,
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Icon(
+              Icons.arrow_back_ios_new,
+              color: color2,
+            ),
           ),
-          const Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                color: color2,
+        ),
+        const Align(
+          alignment: Alignment.topCenter,
+          child: Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: SizedBox(
+              height: 64,
+              child: Image(
+                image: AssetImage("assets/images/blank_profile.png"),
               ),
             ),
           ),
-          const Align(
-            alignment: Alignment.topCenter,
+        ),
+      ],
+    );
+  }
+}
+
+// CHAT MENU --------------
+final List<Profile> _profiles = <Profile>[];
+
+class ChatMenu extends StatelessWidget {
+  const ChatMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: backgroundGradient,
+          ),
+          SafeArea(
             child: Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: SizedBox(
-                height: 64,
-                child: Image(
-                  image: AssetImage("assets/images/blank_profile.png"),
-                ),
+              padding: const EdgeInsets.fromLTRB(25, 25, 25, 52 + 10),
+              child: ListView(
+                children: const <Widget>[
+                  ChatProfile(),
+                  ChatProfile(),
+                  ChatProfile(),
+                  ChatProfile(),
+                  ChatProfile(),
+                  ChatProfile(),
+                  ChatProfile(),
+                  ChatProfile(),
+                ],
               ),
             ),
           ),
@@ -57,8 +94,56 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 }
 
+class ChatProfile extends StatelessWidget {
+  const ChatProfile({super.key});
 
-
+  @override
+  Widget build(BuildContext context) {
+    const double height = 65;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 5),
+      child: Container(
+        height: height,
+        decoration: cardBackground,
+        child: Align(
+          alignment: Alignment.center,
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              children: <Widget>[
+                // Photo
+                Container(
+                  height: height,
+                  decoration: iconBackground,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: const Image(
+                      image: AssetImage('assets/images/blank_profile.png'),
+                    ),
+                  ),
+                ),
+                // Name
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                    child: Text("Rocio"),
+                  ),
+                ),
+                // Affinity Value
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                    child: Text("Hi."),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 // -----------------------------------------------------------------------
 // For the testing purposes, you should probably use https://pub.dev/packages/uuid.
 // String randomString() {

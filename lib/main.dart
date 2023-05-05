@@ -1,5 +1,9 @@
+import 'package:cupidsoracle/layout.dart';
 import 'package:cupidsoracle/screens/affinity.dart';
 import 'package:cupidsoracle/screens/chat.dart';
+import 'package:cupidsoracle/screens/login.dart';
+import 'package:cupidsoracle/screens/play.dart';
+import 'package:cupidsoracle/screens/profile.dart';
 import 'package:cupidsoracle/theme.dart';
 import 'package:flutter/material.dart';
 // import 'package:firebase_core/firebase_core.dart';
@@ -33,9 +37,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: const AffinityScreen(
-          // userId: "0",
-          ),
+      home: const Layout(),
     );
   }
 }
