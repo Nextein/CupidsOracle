@@ -27,8 +27,29 @@ class Chat {
   static List<Chat> chats = [
     Chat(
       id: '0',
-      // TODO: Finish writing this from youtube video
-      // https://www.youtube.com/watch?v=HnHicg5zdEY
+      users: [User.users[0], User.users[1]],
+      messages: Message.messages
+          .where(
+            (message) =>
+                (message.senderId == User.users[0].id ||
+                    message.senderId == User.users[1].id) &
+                (message.recipientId == User.users[0].id ||
+                    message.recipientId == User.users[1].id),
+          )
+          .toList(),
+    ),
+    Chat(
+      id: '1',
+      users: [User.users[0], User.users[1]],
+      messages: Message.messages
+          .where(
+            (message) =>
+                (message.senderId == User.users[0].id ||
+                    message.senderId == User.users[1].id) &
+                (message.recipientId == User.users[0].id ||
+                    message.recipientId == User.users[1].id),
+          )
+          .toList(),
     ),
   ];
 }

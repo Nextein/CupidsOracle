@@ -26,10 +26,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        // Background
-        Container(
-          decoration: backgroundGradient,
-        ),
+        // Return button
         const Align(
           alignment: Alignment.topLeft,
           child: Padding(
@@ -40,6 +37,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
         ),
+        // Image
         const Align(
           alignment: Alignment.topCenter,
           child: Padding(
@@ -52,13 +50,40 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
         ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: navbarHeight),
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Type your message...',
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.send,
+                      color: white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
 }
 
 // CHAT MENU --------------
-final List<Profile> _profiles = <Profile>[];
+final List<User> _profiles = <User>[];
 
 class ChatMenu extends StatelessWidget {
   const ChatMenu({super.key});
@@ -144,6 +169,9 @@ class ChatProfile extends StatelessWidget {
     );
   }
 }
+
+
+
 // -----------------------------------------------------------------------
 // For the testing purposes, you should probably use https://pub.dev/packages/uuid.
 // String randomString() {

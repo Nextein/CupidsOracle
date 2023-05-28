@@ -3,6 +3,7 @@ import 'package:cupidsoracle/screens/affinity.dart';
 import 'package:cupidsoracle/screens/chat.dart';
 import 'package:cupidsoracle/screens/play.dart';
 import 'package:cupidsoracle/screens/profile.dart';
+import 'package:cupidsoracle/screens/splash.dart';
 import 'package:cupidsoracle/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +27,8 @@ class LayoutState extends State<Layout> {
     // Profile(),
     PlayMenu(),
     AffinityScreen(),
-    Text("2"),
-    Text("3"),
+    ChatScreen(),
+    SplashScreen(),
   ];
 
   void _onItemTapped(int page) {
@@ -90,40 +91,3 @@ class LayoutState extends State<Layout> {
     );
   }
 }
-
-// class _LayoutState extends State<Layout> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text(
-//           "Cupid's Oracle",
-//         ),
-//       ),
-//       bottomNavigationBar: BottomNavigationBar(
-//         currentIndex: _selectedPage,
-//         onTap: _onItemTapped,
-//         selectedItemColor: Colors.purple[200],
-//         items: const <BottomNavigationBarItem>[
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.favorite),
-//             label: "",
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.people),
-//             label: "",
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.question_answer),
-//             label: "",
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.account_circle),
-//             label: "",
-//           ),
-//         ],
-//       ),
-//       body: _pages.elementAt(_selectedPage),
-//     );
-//   }
-// }

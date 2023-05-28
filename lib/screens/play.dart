@@ -117,10 +117,10 @@ class PlayMenu extends StatelessWidget {
         // Foreground
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(25, 25, 25, navbarHeight + 10),
+            padding: const EdgeInsets.fromLTRB(15, 25, 15, navbarHeight + 10),
             child: ListView(
               children: [
-                Placeholder(),
+                const Placeholder(),
               ],
             ),
           ),
